@@ -37,7 +37,7 @@ jobs :
           
 
       - name: Upload jar file
-        if: ${{success()}}
+        if: ${{contains(github.actor,'sivaram')}}
         uses: actions/upload-artifact@v3
         with:
           name: myapp-jar
