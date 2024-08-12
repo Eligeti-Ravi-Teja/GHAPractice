@@ -27,7 +27,7 @@ jobs :
         run : mvn test
 
       - name: upload jar file
-        if: ${{success()}
+        if: ${{success()}}
         uses: actions/upload-artifact@v 3
         with:
           name: myapp-jar
