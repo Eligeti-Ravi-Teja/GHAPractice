@@ -28,7 +28,7 @@ jobs :
 
       - name: upload jar file
         if: ${{success()}}
-        uses: actions/upload-artifact@v 3
+        uses: actions/upload-artifact@v3
         with:
           name: myapp-jar
           path: target/*.jar
