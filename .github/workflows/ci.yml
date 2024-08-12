@@ -1,5 +1,5 @@
 name: Spring demo GHA
-
+#Trigger
 on:
   push:
     branches:
@@ -7,9 +7,10 @@ on:
   pull_request:
     branches:
       - master
+#Jobs
 jobs :
   build :
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest #Environment to run jobs
 
     steps:
       - name: checkout code
@@ -24,3 +25,10 @@ jobs :
         run : mvn clean install
       - name: Test
         run : mvn test
+
+      - name: upload jar file
+        if: ${{success()}
+        uses: actions/upload-artifact@v 3
+        with:
+          name: myapp-jar
+          path: target/*.jar
