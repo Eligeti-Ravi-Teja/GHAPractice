@@ -21,7 +21,7 @@ public class ProjectController {
         return projectService.createProject(project);
     }
 
-    
+
     @GetMapping
     public ResponseEntity<BaseResponse<List<Project>>> fetchAllProjects(){
         return projectService.fetchProjects();
